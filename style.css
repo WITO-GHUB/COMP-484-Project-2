@@ -10,7 +10,8 @@
   
   main {
     display:block;
-    height:175px;
+    height: auto;
+    overflow: hidden;
   }
   
   header {
