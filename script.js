@@ -14,7 +14,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
   })
   
     // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
-    var pet_info = {name:"Momo", weight:"20 lbs", happiness:"1000" energy: "1000"};
+    var pet_info = {name:"Momo", weight: 20, happiness: 1000, energy: 100};
   
     function clickedTreatButton() {
         pet_info.happiness += 10; // Treats make the pet happier
@@ -53,6 +53,11 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
 
     function checkAndUpdatePetInfoInHtml() {
       checkWeightAndHappinessBeforeUpdating();
+      updatePetInfoInHtml();
+    }
+    
+    function checkWeightAndHappinessBeforeUpdating() {
+      // Add conditional so if weight is lower than zero.
         if (pet_info.weight < 0) {
             pet_info.weight = 0;
         }
@@ -66,26 +71,22 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
             pet_info.energy = 100;
         }
     }
-      updatePetInfoInHtml();
-    }
-    
-    function checkWeightAndHappinessBeforeUpdating() {
-      // Add conditional so if weight is lower than zero.
-        $('.name').text(pet_info.name);
-        $('.weight').text(pet_info.weight);
-        $('.happiness').text(pet_info.happiness);
-        $('.energy').text(pet_info.energy);
-    }
     
     // Updates your HTML with the current values in your pet_info object
     function updatePetInfoInHtml() {
       $('.name').text(pet_info['name']);
       $('.weight').text(pet_info['weight']);          
       $('.happiness').text(pet_info['happiness']);
+      $('.energy').text(pet_info['energy']);
       $('.pet-image').toggleClass('happy', pet_info.happiness >= 100); // .toggleClass adds a class if the condition is true and removes if false
     }
 
+var messageTimer;
 function showPetMessage(message) {
     $('.pet-message').text(message).addClass('show'); // .addClass adds a CSS class to the element without affecting other classes. Adds "show" to the message paragraph and the CSS rule .pet-message
-    
+    clearTimeout(messageTimer);
+    messageTimer = setTimeout(function() {
+    $('.pet-message').removeClass('show');
+    }, 2000);
+}
   
