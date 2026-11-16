@@ -7,14 +7,14 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.treat-button').click(clickedTreatButton);
     $('.play-button').click(clickedPlayButton);
     $('.exercise-button').click(clickedExerciseButton);
-    $('.sleep-button').click(clickedSleepButton);
+    $('.nap-button').click(clickedNapButton);
 
   
     
   })
   
     // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
-    var pet_info = {name:"Mookie", weight:"40 lbs", happiness:"1000" energy: "1000"};
+    var pet_info = {name:"Momo", weight:"20 lbs", happiness:"1000" energy: "1000"};
   
     function clickedTreatButton() {
         pet_info.happiness += 10; // Treats make the pet happier
