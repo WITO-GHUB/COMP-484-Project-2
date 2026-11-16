@@ -29,7 +29,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
         pet_info.happiness += 20; 
         pet_info.weight -= 1;
         pet_info.energy -= 5;
-        showPetMessage("More play!);
+        showPetMessage("More play!");
       // Decrease pet weight
       checkAndUpdatePetInfoInHtml();
     }
@@ -40,7 +40,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
         pet_info.weight -= 2;
         pet_info.energy -= 10;
       // Decrease pet weight
-        showPetMessage("Running hard :/);
+        showPetMessage("Running hard :/");
       checkAndUpdatePetInfoInHtml();
     }
 
