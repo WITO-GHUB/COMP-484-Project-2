@@ -80,3 +80,25 @@
     background-image: linear-gradient(to bottom,rgba(246,246,246,.1)0%,rgba(30,40,53,0)66%);
     color: #fafafa;
   }
+
+.pet-message {
+    opacity: 0;
+    transition: opacity 0.3s;
+    clear: both;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #fff8dc;
+    border: 1px solid #d8c88a;
+    border-radius: 6px;
+    font-style: italic;
+    max-width: 400px;
+}
+
+.pet-message.show {
+    opacity: 1;
+}
+
+.pet-image.happy {
+    box-shadow: 0 0 15px 5px gold;
+    border-radius: 8px;
+}
